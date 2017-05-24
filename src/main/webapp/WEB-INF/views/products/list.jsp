@@ -11,6 +11,7 @@
     <body>
 
         <h1>List of Products</h1>
+        <h3>${message}</h3>
         <table>
             <tr>
                 <td>Title</td>
