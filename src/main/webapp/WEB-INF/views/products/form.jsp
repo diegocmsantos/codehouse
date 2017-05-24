@@ -12,7 +12,8 @@
 
     <body>
 
-        <form:form action="${s:mvcUrl('PC#save').build()}" method="POST" commandName="product">
+        <form:form action="${s:mvcUrl('PC#save').build()}" method="POST" commandName="product"
+            enctype="multipart/form-data">
             <div>
                 <label>Title</label>
                 <form:input path="title" />
@@ -40,6 +41,10 @@
                     <form:hidden path="prices[${status.index }].type" value="${type}" />
                 </div>
             </c:forEach>
+            <div>
+                <label>Summary</label>
+                <input type="file" name="summary" />
+            </div>
             <div>
                 <button type="submit">Save</button>
             </div>

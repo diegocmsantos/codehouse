@@ -2,6 +2,7 @@ package com.clearbases.codehouse.conf;
 
 import com.clearbases.codehouse.controllers.HomeController;
 import com.clearbases.codehouse.dao.ProductDAO;
+import com.clearbases.codehouse.infra.FileManager;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,6 +11,8 @@ import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceView;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -18,7 +21,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * Created by diego on 5/10/17.
  */
 @EnableWebMvc
-@ComponentScan(basePackageClasses = {HomeController.class, ProductDAO.class})
+@ComponentScan(basePackageClasses = {HomeController.class, ProductDAO.class, FileManager.class})
 public class AppWebConfiguration {
 
     @Bean
@@ -47,6 +50,11 @@ public class AppWebConfiguration {
         registrar.registerFormatters(conversionService);
 
         return conversionService;
+    }
+
+    @Bean
+    public MultipartResolver multipartResolver() {
+        return new StandardServletMultipartResolver();
     }
 
 }
