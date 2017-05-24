@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ad0764a-5e99-48df-b49c-050a77f4dcf4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/validations/ProductValidation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/message.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codehouse.iml" afterPath="$PROJECT_DIR$/codehouse.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/conf/AppWebConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/conf/AppWebConfiguration.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/controllers/ProductController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/controllers/ProductController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/models/Product.java" afterPath="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/models/Product.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/form.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/form.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/list.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,8 +23,8 @@
       <file leaf-file-name="ProductController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/controllers/ProductController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+            <state relative-caret-position="165">
+              <caret line="44" column="31" lean-forward="false" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
               <folding>
                 <element signature="e#1049#1050#0" expanded="true" />
                 <element signature="e#1114#1115#0" expanded="true" />
@@ -37,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="form.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/form.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="40" column="19" lean-forward="false" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+            <state relative-caret-position="284">
+              <caret line="22" column="77" lean-forward="false" selection-start-line="22" selection-start-column="77" selection-end-line="22" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -51,17 +47,17 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/message.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="52" lean-forward="false" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+              <caret line="5" column="52" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppWebConfiguration.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AppWebConfiguration.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/conf/AppWebConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
-              <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+              <caret line="41" column="9" lean-forward="false" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -87,6 +83,21 @@
             <state relative-caret-position="150">
               <caret line="10" column="39" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/models/Product.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+              <folding>
+                <element signature="e#1285#1286#0" expanded="true" />
+                <element signature="e#1319#1320#0" expanded="true" />
+                <element signature="e#1375#1376#0" expanded="true" />
+                <element signature="e#1421#1422#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -168,7 +179,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/clearbases/controllers/ProductController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/ok.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/models/TipoPreco.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/models/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/models/Price.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/dao/ProductDAO.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" />
@@ -177,10 +187,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/list.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/validations/ProductValidation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/conf/AppWebConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/message.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/models/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/controllers/ProductController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/form.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/conf/AppWebConfiguration.java" />
       </list>
     </option>
   </component>
@@ -827,7 +838,14 @@
       <option name="project" value="LOCAL" />
       <updated>1495642667863</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Spring form validations">
+      <created>1495648913726</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1495648913726</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -872,7 +890,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="redirectAfterPost and flash message" />
-    <option name="LAST_COMMIT_MESSAGE" value="redirectAfterPost and flash message" />
+    <MESSAGE value="Spring form validations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Spring form validations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1245,22 +1264,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/conf/AppWebConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/models/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/validations/ProductValidation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1276,15 +1279,28 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/message.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="52" lean-forward="false" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+          <caret line="5" column="52" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/models/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+          <folding>
+            <element signature="e#1285#1286#0" expanded="true" />
+            <element signature="e#1319#1320#0" expanded="true" />
+            <element signature="e#1375#1376#0" expanded="true" />
+            <element signature="e#1421#1422#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/controllers/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        <state relative-caret-position="165">
+          <caret line="44" column="31" lean-forward="false" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
           <folding>
             <element signature="e#1049#1050#0" expanded="true" />
             <element signature="e#1114#1115#0" expanded="true" />
@@ -1294,8 +1310,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/form.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="40" column="19" lean-forward="false" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+        <state relative-caret-position="284">
+          <caret line="22" column="77" lean-forward="false" selection-start-line="22" selection-start-column="77" selection-end-line="22" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/conf/AppWebConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="41" column="9" lean-forward="false" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
           <folding />
         </state>
       </provider>

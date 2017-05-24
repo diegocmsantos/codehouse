@@ -1,6 +1,9 @@
 package com.clearbases.codehouse.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -19,6 +22,9 @@ public class Product {
 
     @ElementCollection
     private List<Price> prices;
+
+    @DateTimeFormat
+    private Calendar releaseDate;
 
     public long getId() {
         return id;
@@ -58,6 +64,14 @@ public class Product {
 
     public void setPrices(List<Price> prices) {
         this.prices = prices;
+    }
+
+    public Calendar getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(Calendar releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     @Override
