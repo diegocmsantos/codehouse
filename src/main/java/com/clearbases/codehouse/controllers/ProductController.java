@@ -8,31 +8,34 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  * Created by diego on 5/11/17.
  */
 @Controller
+@RequestMapping("products")
 public class ProductController {
 
     @Autowired
     private ProductDAO productDAO;
 
-    @RequestMapping("products/form")
+    @RequestMapping("/form")
     public ModelAndView form() {
         ModelAndView modelAndView = new ModelAndView("products/form");
         modelAndView.addObject("types", PriceType.values());
         return modelAndView;
     }
 
-    @RequestMapping(value = "products", method = RequestMethod.POST)
-    public String save(Product product) {
+    @RequestMapping(method = RequestMethod.POST)
+    public ModelAndView save(Product product, RedirectAttributes redirectAttributes) {
         System.out.println(product.toString());
         productDAO.save(product);
-        return "products/ok";
+        redirectAttributes.addFlashAttribute("message", "Product saved successfully!");
+        return new ModelAndView("redirect:products");
     }
 
-    @RequestMapping("products")
+    @RequestMapping()
     public ModelAndView list() {
         ModelAndView modelAndView = new ModelAndView("products/list");
         modelAndView.addObject("products", productDAO.list());

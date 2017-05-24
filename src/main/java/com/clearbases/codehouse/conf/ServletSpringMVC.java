@@ -1,6 +1,9 @@
 package com.clearbases.codehouse.conf;
 
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import javax.servlet.Filter;
 
 /**
  * Created by diego on 5/10/17.
@@ -22,4 +25,10 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
         return new String[] {"/"};
     }
 
+    @Override
+    protected Filter[] getServletFilters() {
+        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+        characterEncodingFilter.setEncoding("UTF-8");
+        return new Filter[] {characterEncodingFilter};
+    }
 }
