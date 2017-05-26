@@ -26,4 +26,9 @@ public class ProductDAO {
         return entityManager.createQuery("SELECT p FROM Product p", Product.class).getResultList();
     }
 
+    public Product find(Long id) {
+        return entityManager.createQuery("SELECT p FROM Product p join fetch p.prices WHERE p.id = :id", Product.class)
+                .setParameter("id", id)
+                .getSingleResult();
+    }
 }
