@@ -1,6 +1,8 @@
 package com.clearbases.codehouse.models;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -10,13 +12,14 @@ import java.util.Map;
  * Created by macair on 25/05/17.
  */
 @Component
+@Scope(value = WebApplicationContext.SCOPE_SESSION)
 public class Cart {
 
     private Map<CartItem, Integer> items = new LinkedHashMap<>();
 
     public void add(CartItem cartItem) {
 
-        items.put(cartItem, getQuantity(cartItem));
+        items.put(cartItem, getQuantity(cartItem) + 1);
     }
 
     private int getQuantity(CartItem cartItem) {
