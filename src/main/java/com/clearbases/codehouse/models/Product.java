@@ -3,8 +3,10 @@ package com.clearbases.codehouse.models;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Product
@@ -109,5 +111,11 @@ public class Product {
             return false;
         Product other = (Product) obj;
         return id == other.id;
+    }
+
+    public BigDecimal priceTo(PriceType priceType) {
+
+        Optional<Price> value = prices.stream().filter(price -> price.getType().equals(priceType)).findFirst();
+        return value.map(Price::getValue).orElse(BigDecimal.ZERO);
     }
 }

@@ -30,13 +30,18 @@ public class CartShopController {
     @RequestMapping("/add")
     public ModelAndView add(Long productId, PriceType priceType) {
 
-        ModelAndView modelAndView = new ModelAndView("redirect:/products");
+        ModelAndView modelAndView = new ModelAndView("redirect:/cart");
         CartItem cartItem = createCartItem(productId, priceType);
 
         cart.add(cartItem);
 
         return modelAndView;
 
+    }
+
+    @RequestMapping()
+    public ModelAndView items() {
+        return new ModelAndView("/cart/items");
     }
 
     private CartItem createCartItem(Long productId, PriceType priceType) {

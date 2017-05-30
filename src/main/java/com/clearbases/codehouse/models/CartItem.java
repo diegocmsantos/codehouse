@@ -2,6 +2,8 @@ package com.clearbases.codehouse.models;
 
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+
 /**
  * Created by macair on 25/05/17.
  */
@@ -36,6 +38,10 @@ public class CartItem {
         this.priceType = priceType;
     }
 
+    public BigDecimal getPrice() {
+        return product.priceTo(priceType);
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -60,5 +66,9 @@ public class CartItem {
         } else if (!product.equals(other.product))
             return false;
         return priceType == other.priceType;
+    }
+
+    public BigDecimal getTotal(int quantity) {
+        return this.getPrice().multiply(new BigDecimal(quantity));
     }
 }
