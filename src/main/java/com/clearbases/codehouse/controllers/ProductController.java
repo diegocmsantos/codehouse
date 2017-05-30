@@ -2,6 +2,7 @@ package com.clearbases.codehouse.controllers;
 
 import com.clearbases.codehouse.dao.ProductDAO;
 import com.clearbases.codehouse.infra.FileManager;
+import com.clearbases.codehouse.models.Cart;
 import com.clearbases.codehouse.models.PriceType;
 import com.clearbases.codehouse.models.Product;
 import com.clearbases.codehouse.validations.ProductValidation;
@@ -31,6 +32,9 @@ public class ProductController {
 
     @Autowired
     private FileManager fileManager;
+
+//    @Autowired
+//    private Cart cart;
 
     @InitBinder
     public void initBinder(WebDataBinder dataBinder) {
@@ -70,6 +74,7 @@ public class ProductController {
         ModelAndView modelAndView = new ModelAndView("products/detail");
         Product product = productDAO.find(id);
         modelAndView.addObject("product", product);
+//        modelAndView.addObject("cart", cart);
         return modelAndView;
     }
 

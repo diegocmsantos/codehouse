@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +51,7 @@
 				<nav id="main-nav">
 					
 					<ul class="clearfix">
-						<li><a href="/cart" rel="nofollow">Carrinho</a></li>
+						<li><a href="/cart" rel="nofollow">Carrinho (${cart.quantity})</a></li>
 
 						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre Nós</a></li>
 
@@ -98,18 +99,21 @@
 	
 	  
 	  <section class="buy-options clearfix">  
-	  <form action="/cart/add" method="post" class="container">
+	  <form action='<c:url value="/cart/add" />' method="post" class="container">
 	    <ul id="variants" class="clearfix">
+	        <input type="hidden" value="${product.id}" name="productId" />
+	        <c:forEach items="${product.prices}" var="price">
 	    	  <li class="buy-option">
-	            <input type="radio" name="id" class="variant-radio" id="product-variant-9720393823" value="9720393823"  checked="checked"  />
+	            <input type="radio" name="type" class="variant-radio" id="type" value="9720393823"  checked="checked"  />
 	            <label  class="variant-label" for="product-variant-9720393823">
 	              E-book + Impresso 
 	            </label>
 	            <small class="compare-at-price">R$ 39,90</small>
-	            <p class="variant-price">R$ 29,90</p>
-	          </li>           
+	            <p class="variant-price">R$ ${price.value}</p>
+	          </li>
+	        </c:forEach>
 	    </ul>
-	    <button type="submit" class="submit-image icon-basket-alt" alt="Compre Agora" title="Compre Agora"></button>
+	    <button type="submit" class="submit-image icon-basket-alt" alt="Compre Agora" title="Compre Agora">Compre agora</button>
 	    
 	  </form>
 	  
@@ -126,7 +130,7 @@
 	    <h2 class="section-title">Dados do livro:</h2>
 	    <p>Número de páginas: <span>${product.pages}</span></p>
 	    <p></p>
-	    <p>Data de publicação: ${product.releaseDate} </p>
+	    <p>Data de publicação: <fmt:formatDate  pattern="dd/MM/yyyy" value="${product.releaseDate.time}" /> </p>
 	    <p>Encontrou um erro? <a href='/submissao-errata' target='_blank'>Submeta uma errata</a></p>
 	  </section>
 	</div>

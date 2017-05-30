@@ -3,6 +3,7 @@ package com.clearbases.codehouse.conf;
 import com.clearbases.codehouse.controllers.HomeController;
 import com.clearbases.codehouse.dao.ProductDAO;
 import com.clearbases.codehouse.infra.FileManager;
+import com.clearbases.codehouse.models.Cart;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -21,7 +22,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * Created by diego on 5/10/17.
  */
 @EnableWebMvc
-@ComponentScan(basePackageClasses = {HomeController.class, ProductDAO.class, FileManager.class})
+@ComponentScan(basePackageClasses = {HomeController.class, ProductDAO.class, FileManager.class,
+    Cart.class})
 public class AppWebConfiguration {
 
     @Bean
@@ -29,6 +31,7 @@ public class AppWebConfiguration {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/WEB-INF/views/");
         resolver.setSuffix(".jsp");
+        resolver.setExposedContextBeanNames("cart");
         return resolver;
     }
 
