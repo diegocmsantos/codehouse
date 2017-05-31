@@ -28,7 +28,7 @@ public class CartShopController {
     private Cart cart;
 
     @RequestMapping("/add")
-    public ModelAndView add(Long productId, PriceType priceType) {
+    public ModelAndView add(Integer productId, PriceType priceType) {
 
         ModelAndView modelAndView = new ModelAndView("redirect:/cart");
         CartItem cartItem = createCartItem(productId, priceType);
@@ -44,9 +44,15 @@ public class CartShopController {
         return new ModelAndView("/cart/items");
     }
 
-    private CartItem createCartItem(Long productId, PriceType priceType) {
+    private CartItem createCartItem(Integer productId, PriceType priceType) {
         Product product = produtoDAO.find(productId);
         return new CartItem(product, priceType);
+    }
+
+    @RequestMapping("/remove")
+    public ModelAndView remove(Integer produtoId, PriceType priceType){
+        cart.remove(produtoId, priceType);
+        return new ModelAndView("redirect:/cart");
     }
 
 }

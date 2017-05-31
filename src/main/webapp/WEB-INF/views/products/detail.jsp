@@ -104,16 +104,16 @@
 	        <input type="hidden" value="${product.id}" name="productId" />
 	        <c:forEach items="${product.prices}" var="price">
 	    	  <li class="buy-option">
-	            <input type="radio" name="type" class="variant-radio" id="type" value="9720393823"  checked="checked"  />
+	            <input type="radio" name="priceType" class="variant-radio" value="${price.type}"  checked="checked"  />
 	            <label  class="variant-label" for="product-variant-9720393823">
-	              E-book + Impresso 
+	              ${price.type}
 	            </label>
 	            <small class="compare-at-price">R$ 39,90</small>
 	            <p class="variant-price">R$ ${price.value}</p>
 	          </li>
 	        </c:forEach>
 	    </ul>
-	    <button type="submit" class="submit-image icon-basket-alt" alt="Compre Agora" title="Compre Agora">Compre agora</button>
+	    <button type="submit" class="submit-image icon-basket-alt" alt="Compre Agora" title="Compre Agora"></button>
 	    
 	  </form>
 	  

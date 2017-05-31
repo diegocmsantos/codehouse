@@ -1,6 +1,7 @@
 package com.clearbases.codehouse.models;
 
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -14,7 +15,7 @@ import java.util.Map;
  * Created by macair on 25/05/17.
  */
 @Component
-@Scope(value = WebApplicationContext.SCOPE_SESSION)
+@Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class Cart {
 
     private Map<CartItem, Integer> items = new LinkedHashMap<>();
@@ -51,4 +52,9 @@ public class Cart {
         return total;
     }
 
+    public void remove(Integer produtoId, PriceType priceType) {
+        Product product = new Product();
+        product.setId(produtoId);
+        items.remove(new CartItem(product, priceType));
+    }
 }

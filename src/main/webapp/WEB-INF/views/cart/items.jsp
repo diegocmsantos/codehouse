@@ -114,11 +114,9 @@
 			          </td>
 			          <td class="numeric-cell">${cart.getTotal(item)}</td>
 			          <td class="remove-item">
-			            <form action="" method="post">
-			                <a href="/cart/change?218748921802387812&quantity=0">
-			                    <img src="${contextPath }resources/imagens/excluir.png" alt="Excluir" title="Excluir" />
-			                </a>
-			            </form>
+			            <form action="${s:mvcUrl('CSC#remove').arg(0, item.product.id).arg(1,item.priceType).build() }" method="post">
+                                <input type="image" src="/excluir.png" alt="Excluir" title="Excluir" />
+                        </form>
 			          </td>
 			      </tr>
 			    </c:forEach>
@@ -126,7 +124,9 @@
 			      <tfoot>
 			        <tr>
 			          <td colspan="3">
-                        <input type="submit" class="checkout" name="checkout" value="Finalizar compra" />
+                        <form action="${s:mvcUrl('PC#pay').build()}" method="post">
+                            <input type="submit" class="checkout" name="checkout" value="Finalizar compra" />
+                        </form>
                       </td>
                       <td class="numeric-cell">${cart.total}</td>
                       <td></td>
