@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ad0764a-5e99-48df-b49c-050a77f4dcf4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/infra/JsonViewResolver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codehouse.iml" afterPath="$PROJECT_DIR$/codehouse.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/conf/AppWebConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/conf/AppWebConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/controllers/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/controllers/HomeController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/controllers/ProductController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/controllers/ProductController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,8 +24,8 @@
       <file leaf-file-name="ProductController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/controllers/ProductController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="52" column="48" lean-forward="true" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+            <state relative-caret-position="124">
+              <caret line="69" column="21" lean-forward="false" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -52,22 +51,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="AppWebConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/conf/AppWebConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="134" column="21" lean-forward="false" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
+            <state relative-caret-position="230">
+              <caret line="102" column="33" lean-forward="false" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppWebConfiguration.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/conf/AppWebConfiguration.java">
+      <file leaf-file-name="JsonViewResolver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/infra/JsonViewResolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="75" column="54" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="215">
+              <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,6 +108,7 @@
       <find>compre agora</find>
       <find>mvcUrl('CCC#remo</find>
       <find>h2 class=&quot;product-title&quot;&gt;Java</find>
+      <find>m.fasterxml.jackson.c</find>
     </findStrings>
     <replaceStrings>
       <replace>type</replace>
@@ -151,10 +153,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/detail.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/controllers/HomeController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/controllers/ProductController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$MAVEN_REPOSITORY$/org/springframework/spring-context-support/4.1.0.RELEASE/spring-context-support-4.1.0.RELEASE.jar!/org/springframework/cache/guava/GuavaCacheManager.class" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/conf/AppWebConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/infra/JsonViewResolver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/controllers/ProductController.java" />
       </list>
     </option>
   </component>
@@ -571,6 +574,7 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.clearbases.codehouse.infra" />
       <recent name="com.clearbases.codehouse.models" />
       <recent name="com.clearbases.codehouse.dao" />
     </key>
@@ -945,7 +949,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496191121640</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Guava cache">
+      <created>1496320182879</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1496320182879</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -998,7 +1009,8 @@
     <MESSAGE value="Session scope" />
     <MESSAGE value="Cart" />
     <MESSAGE value="Fixing css access" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing css access" />
+    <MESSAGE value="Guava cache" />
+    <option name="LAST_COMMIT_MESSAGE" value="Guava cache" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1034,7 +1046,7 @@
           <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1043,13 +1055,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="42" column="36" lean-forward="false" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/conf/ServletSpringMVC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -1276,6 +1281,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1368,14 +1374,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="134" column="21" lean-forward="false" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context-support/4.1.0.RELEASE/spring-context-support-4.1.0.RELEASE.jar!/org/springframework/cache/guava/GuavaCacheManager.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-273">
@@ -1392,10 +1390,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/conf/AppWebConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="75" column="54" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+        <state relative-caret-position="205">
+          <caret line="139" column="36" lean-forward="false" selection-start-line="139" selection-start-column="36" selection-end-line="139" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1408,10 +1406,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/conf/AppWebConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="102" column="33" lean-forward="false" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/infra/JsonViewResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clearbases/codehouse/controllers/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="52" column="48" lean-forward="true" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+        <state relative-caret-position="124">
+          <caret line="69" column="21" lean-forward="false" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
           <folding />
         </state>
       </provider>

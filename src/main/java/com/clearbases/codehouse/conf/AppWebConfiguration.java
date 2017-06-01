@@ -3,6 +3,7 @@ package com.clearbases.codehouse.conf;
 import com.clearbases.codehouse.controllers.HomeController;
 import com.clearbases.codehouse.dao.ProductDAO;
 import com.clearbases.codehouse.infra.FileManager;
+import com.clearbases.codehouse.infra.JsonViewResolver;
 import com.clearbases.codehouse.models.Cart;
 import com.google.common.cache.CacheBuilder;
 import org.springframework.cache.CacheManager;
@@ -18,14 +19,19 @@ import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
+import org.springframework.web.accept.ContentNegotiationManager;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
+import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
 import org.springframework.web.servlet.view.InternalResourceView;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -88,6 +94,19 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
         guavaCacheManager.setCacheBuilder(builder);
         return guavaCacheManager;
 
+    }
+
+    @Bean
+    public ViewResolver contentNegotiationViewResolver(ContentNegotiationManager manager){
+        List<ViewResolver> viewResolvers = new ArrayList<>();
+        viewResolvers.add(internalResourceViewResolver());
+        viewResolvers.add(new JsonViewResolver());
+
+        ContentNegotiatingViewResolver resolver = new ContentNegotiatingViewResolver();
+        resolver.setViewResolvers(viewResolvers);
+        resolver.setContentNegotiationManager(manager);
+
+        return resolver;
     }
 
 }

@@ -2,7 +2,6 @@ package com.clearbases.codehouse.controllers;
 
 import com.clearbases.codehouse.dao.ProductDAO;
 import com.clearbases.codehouse.infra.FileManager;
-import com.clearbases.codehouse.models.Cart;
 import com.clearbases.codehouse.models.PriceType;
 import com.clearbases.codehouse.models.Product;
 import com.clearbases.codehouse.validations.ProductValidation;
@@ -11,10 +10,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -71,12 +67,11 @@ public class ProductController {
         return modelAndView;
     }
 
-    @RequestMapping("/detail/{id}")
+    @RequestMapping("/{id}")
     public ModelAndView detail(@PathVariable("id") Integer id) {
         ModelAndView modelAndView = new ModelAndView("products/detail");
         Product product = productDAO.find(id);
         modelAndView.addObject("product", product);
-//        modelAndView.addObject("cart", cart);
         return modelAndView;
     }
 
