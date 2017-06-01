@@ -4,6 +4,12 @@ import com.clearbases.codehouse.controllers.HomeController;
 import com.clearbases.codehouse.dao.ProductDAO;
 import com.clearbases.codehouse.infra.FileManager;
 import com.clearbases.codehouse.models.Cart;
+import com.google.common.cache.CacheBuilder;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
+import org.springframework.cache.guava.GuavaCache;
+import org.springframework.cache.guava.GuavaCacheManager;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,10 +26,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceView;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by diego on 5/10/17.
  */
 @EnableWebMvc
+@EnableCaching
 @ComponentScan(basePackageClasses = {HomeController.class, ProductDAO.class, FileManager.class,
     Cart.class})
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
@@ -66,6 +75,19 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
+    }
+
+    @Bean
+    public CacheManager cacheManager() {
+
+        CacheBuilder<Object, Object> builder = CacheBuilder
+                .newBuilder()
+                .maximumSize(100)
+                .expireAfterAccess(5, TimeUnit.MINUTES);
+        GuavaCacheManager guavaCacheManager = new GuavaCacheManager();
+        guavaCacheManager.setCacheBuilder(builder);
+        return guavaCacheManager;
+
     }
 
 }

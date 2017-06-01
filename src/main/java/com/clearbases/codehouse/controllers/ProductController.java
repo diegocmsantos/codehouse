@@ -7,6 +7,7 @@ import com.clearbases.codehouse.models.PriceType;
 import com.clearbases.codehouse.models.Product;
 import com.clearbases.codehouse.validations.ProductValidation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -48,6 +49,7 @@ public class ProductController {
         return modelAndView;
     }
 
+    @CacheEvict(value = "productsHome", allEntries = true)
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView save(MultipartFile summary, @Valid Product product, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
