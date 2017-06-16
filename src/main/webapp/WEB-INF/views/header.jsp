@@ -1,4 +1,5 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,13 +50,29 @@
 					<ul class="clearfix">
 						<li>
 						    <a href="${s:mvcUrl('CSC#items').build()}" rel="nofollow">
-						        Cart (${cart.quantity})
+						        <fmt:message key="menu.cart">
+						            <fmt:param value="${cart.quantity}"/>
+						        </fmt:message>
 						    </a>
 						</li>
 
-						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre Nós</a></li>
+						<li>
+						    <a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">
+						        <fmt:message key="menu.about"/>
+						    </a>
+						</li>
 
-						<li><a href="/pages/perguntas-frequentes" rel="nofollow">Perguntas Frequentes</a></li>
+						<li>
+                            <a href="?locale=pt" rel="nofollow">
+                                <fmt:message key="menu.pt"/>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="?locale=en_US" rel="nofollow">
+                                <fmt:message key="menu.en"/>
+                            </a>
+                        </li>
 					</ul>
 				</nav>
 			</div>
@@ -63,19 +80,13 @@
 	</header>
 	<nav class="categories-nav">
 		<ul class="container">
-			<li class="category"><a href="http://www.casadocodigo.com.br">Home</a></li>
-			<li class="category"><a href="/collections/livros-de-agile">
-					Agile </a></li>
-			<li class="category"><a href="/collections/livros-de-front-end">
-					Front End </a></li>
-			<li class="category"><a href="/collections/livros-de-games">
-					Games </a></li>
-			<li class="category"><a href="/collections/livros-de-java">
-					Java </a></li>
-			<li class="category"><a href="/collections/livros-de-mobile">
-					Mobile </a></li>
-			<li class="category"><a
-				href="/collections/livros-desenvolvimento-web"> Web </a></li>
-			<li class="category"><a href="/collections/outros"> Outros </a></li>
+			<li class="category"><a href="http://www.casadocodigo.com.br"><fmt:message key="navigation.category.home"/></a></li>
+			<li class="category"><a href="/collections/livros-de-agile"><fmt:message key="navigation.category.agile"/></a></li>
+			<li class="category"><a href="/collections/livros-de-front-end"><fmt:message key="navigation.category.front_end"/></a></li>
+			<li class="category"><a href="/collections/livros-de-games"><fmt:message key="navigation.category.games"/></a></li>
+			<li class="category"><a href="/collections/livros-de-java"><fmt:message key="navigation.category.java"/></a></li>
+			<li class="category"><a href="/collections/livros-de-mobile"><fmt:message key="navigation.category.mobile"/></a></li>
+			<li class="category"><a href="/collections/livros-desenvolvimento-web"><fmt:message key="navigation.category.web"/></a></li>
+			<li class="category"><a href="/collections/outros"><fmt:message key="navigation.category.others"/></a></li>
 		</ul>
 	</nav>
