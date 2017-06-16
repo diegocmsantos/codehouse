@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <html>
     <head>
         <%@ page isELIgnored="false" %>
@@ -30,6 +31,9 @@
               <ul class="nav navbar-nav">
                 <li><a href="${s:mvcUrl('PC#list').build()}">Products List</a></li>
                 <li><a href="${s:mvcUrl('PC#form').build()}">Add Products</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"><security:authentication property="principal.username"/></a></li>
             </ul>
             </div><!-- /.navbar-collapse -->
           </div>

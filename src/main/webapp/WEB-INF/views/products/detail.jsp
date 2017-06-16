@@ -98,8 +98,8 @@
 		  </header>
 	
 	  
-	  <section class="buy-options clearfix">  
-	  <form action='<c:url value="/cart/add" />' method="post" class="container">
+	  <section class="buy-options clearfix">
+	  <form:form servletRelativeAction="/cart/add" method="post" cssClass="container">
 	    <ul id="variants" class="clearfix">
 	        <input type="hidden" value="${product.id}" name="productId" />
 	        <c:forEach items="${product.prices}" var="price">
@@ -115,7 +115,7 @@
 	    </ul>
 	    <button type="submit" class="submit-image icon-basket-alt" alt="Compre Agora" title="Compre Agora"></button>
 	    
-	  </form>
+	  </form:form>
 	  
 	</section>
 	  

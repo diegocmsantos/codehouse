@@ -13,29 +13,33 @@ import javax.servlet.ServletRegistration;
 public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
-    protected Class<?>[] getRootConfigClasses() {
-        return new Class[0];
-    }
-
-    @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] {AppWebConfiguration.class, JPAConfiguration.class};
+        return new Class[]{};
     }
 
     @Override
     protected String[] getServletMappings() {
-        return new String[] {"/"};
+        return new String[]{"/"};
     }
 
     @Override
     protected Filter[] getServletFilters() {
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
         characterEncodingFilter.setEncoding("UTF-8");
-        return new Filter[] {characterEncodingFilter};
+        return new Filter[]{characterEncodingFilter};
     }
 
     @Override
     protected void customizeRegistration(ServletRegistration.Dynamic registration) {
         registration.setMultipartConfig(new MultipartConfigElement(""));
+    }
+
+    @Override
+    protected Class<?>[] getRootConfigClasses() {
+        return new Class[]{
+                SecurityConfiguration.class,
+                AppWebConfiguration.class,
+                JPAConfiguration.class
+        };
     }
 }

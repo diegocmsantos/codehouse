@@ -8,8 +8,6 @@ import com.clearbases.codehouse.models.Cart;
 import com.google.common.cache.CacheBuilder;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
-import org.springframework.cache.guava.GuavaCache;
 import org.springframework.cache.guava.GuavaCacheManager;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -27,7 +25,6 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
-import org.springframework.web.servlet.view.InternalResourceView;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import java.util.ArrayList;
@@ -40,7 +37,7 @@ import java.util.concurrent.TimeUnit;
 @EnableWebMvc
 @EnableCaching
 @ComponentScan(basePackageClasses = {HomeController.class, ProductDAO.class, FileManager.class,
-    Cart.class})
+        Cart.class})
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
     @Bean
@@ -64,7 +61,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
     @Bean
     public FormattingConversionService mvcConversionService() {
-        DefaultFormattingConversionService conversionService  = new DefaultFormattingConversionService();
+        DefaultFormattingConversionService conversionService = new DefaultFormattingConversionService();
         DateFormatterRegistrar registrar = new DateFormatterRegistrar();
         registrar.setFormatter(new DateFormatter("dd/MM/yyyy"));
         registrar.registerFormatters(conversionService);
@@ -97,7 +94,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
     }
 
     @Bean
-    public ViewResolver contentNegotiationViewResolver(ContentNegotiationManager manager){
+    public ViewResolver contentNegotiationViewResolver(ContentNegotiationManager manager) {
         List<ViewResolver> viewResolvers = new ArrayList<>();
         viewResolvers.add(internalResourceViewResolver());
         viewResolvers.add(new JsonViewResolver());
