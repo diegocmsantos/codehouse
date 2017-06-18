@@ -1,11 +1,10 @@
 package com.clearbases.codehouse.conf;
 
+import org.springframework.web.context.request.RequestContextListener;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import javax.servlet.Filter;
-import javax.servlet.MultipartConfigElement;
-import javax.servlet.ServletRegistration;
+import javax.servlet.*;
 
 /**
  * Created by diego on 5/10/17.
@@ -41,5 +40,12 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
                 AppWebConfiguration.class,
                 JPAConfiguration.class
         };
+    }
+
+    @Override
+    public void onStartup(ServletContext servletContext) throws ServletException {
+        super.onStartup(servletContext);
+        servletContext.addListener(new RequestContextListener());
+        servletContext.setInitParameter("spring.profiles.active", "dev");
     }
 }

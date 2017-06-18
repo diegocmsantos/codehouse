@@ -4,6 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
@@ -23,7 +24,7 @@ public class Product {
     private int pages;
 
     @ElementCollection
-    private List<Price> prices;
+    private List<Price> prices = new ArrayList<>();
 
     @DateTimeFormat
     private Calendar releaseDate;

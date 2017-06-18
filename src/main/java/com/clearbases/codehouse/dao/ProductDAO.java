@@ -1,11 +1,14 @@
 package com.clearbases.codehouse.dao;
 
+import com.clearbases.codehouse.models.PriceType;
 import com.clearbases.codehouse.models.Product;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -30,5 +33,14 @@ public class ProductDAO {
         return entityManager.createQuery("SELECT p FROM Product p join fetch p.prices WHERE p.id = :id", Product.class)
                 .setParameter("id", id)
                 .getSingleResult();
+    }
+
+    public BigDecimal sumPricesByType(PriceType priceType) {
+
+        TypedQuery<BigDecimal> query = entityManager
+                .createQuery("select sum(price.value) from Product p join p.prices price where price.type = :priceType", BigDecimal.class);
+        query.setParameter("priceType", priceType);
+        return query.getSingleResult();
+
     }
 }
