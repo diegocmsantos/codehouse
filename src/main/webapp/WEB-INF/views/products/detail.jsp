@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 
-<tags:pageTemplate title="${product.titulo}">
+<tags:pageTemplate title="${product.title}">
 
 	<article id="livro-css-eficiente">
 		  <header id="product-highlight" class="clearfix">

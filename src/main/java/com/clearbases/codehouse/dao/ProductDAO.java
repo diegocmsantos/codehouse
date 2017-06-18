@@ -4,8 +4,10 @@ import com.clearbases.codehouse.models.PriceType;
 import com.clearbases.codehouse.models.Product;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.math.BigDecimal;
@@ -26,7 +28,7 @@ public class ProductDAO {
     }
 
     public List<Product> list() {
-        return entityManager.createQuery("SELECT p FROM Product p", Product.class).getResultList();
+        return entityManager.createQuery("select distinct(p) from Product p join fetch p.prices", Product.class).getResultList();
     }
 
     public Product find(Integer id) {
@@ -42,5 +44,10 @@ public class ProductDAO {
         query.setParameter("priceType", priceType);
         return query.getSingleResult();
 
+    }
+
+    @ExceptionHandler(NoResultException.class)
+    public String handleDetailNotFound(){
+        return "error";
     }
 }
