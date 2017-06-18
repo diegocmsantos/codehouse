@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class CartShopController {
 
     @Autowired
-    private ProductDAO produtoDAO;
+    private ProductDAO productDAO;
 
     @Autowired
     private Cart cart;
@@ -45,7 +45,7 @@ public class CartShopController {
     }
 
     private CartItem createCartItem(Integer productId, PriceType priceType) {
-        Product product = produtoDAO.find(productId);
+        Product product = productDAO.find(productId);
         return new CartItem(product, priceType);
     }
 

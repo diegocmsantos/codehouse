@@ -57,7 +57,7 @@ public class ProductController {
 
         productDAO.save(product);
         redirectAttributes.addFlashAttribute("message", "Product saved successfully!");
-        return new ModelAndView("redirect:products");
+        return new ModelAndView("redirect:/products");
     }
 
     @RequestMapping()
